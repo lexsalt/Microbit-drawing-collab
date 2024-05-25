@@ -1,6 +1,10 @@
-canvas {
+#canvas {
   background-color: white;
   position: relative;
+  border: 1px solid black;
+}
+#canvas2 {
+  position: absolute;
   border: 1px solid black;
 }
 body {

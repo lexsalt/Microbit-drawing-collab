@@ -3,7 +3,9 @@ let pitch1 = 0;
 let roll1 = 0;
 // document.getElementById("pitch").value = pitch;
 const canva = document.getElementById("canvas");
+const canva2 = document.getElementById("canvas2");
 const ctx = canva.getContext("2d");
+const ctx2 = canva2.getContext("2d");
 let divClientWidth = document.getElementById("container").clientWidth;
 console.log(divClientWidth);
 let divClientHeight = document.getElementById("container").clientHeight;
@@ -14,6 +16,8 @@ let height = divClientHeight;
 
 canvas.height = height
 canvas.width = width;
+canva2.height = height
+canva2.width = width;
 let pitchArray = [];
 let rollArray = [];
 // let yaw = 0;
@@ -235,7 +239,7 @@ function finishedPosition() {
 }
 
 function draw() {
-    if (!painting) return;
+    // if (!painting) return;
     document.getElementById("pitch1").value = pitch1;
     document.getElementById("roll1").value = roll1;
     document.getElementById("positionX1").value = positionX1.toFixed(2);
@@ -262,16 +266,15 @@ function pointer() {
     document.getElementById("positionY1").value = positionY1.toFixed(2);
     positionX1 = setPositionX1(positionX1);
     positionY1 = setPositionY1(positionY1);
-    ctx.clearRect(0, 0, width, height);
-    ctx.strokeStyle = "black";
-    ctx.fillStyle = "black";
-    ctx.lineWidth = 15;
-    ctx.lineCap = 'round';
-
-    ctx.lineTo(positionX1, positionY1);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(positionX1, positionY1);
+    ctx2.clearRect(0, 0, width, height);
+    ctx2.strokeStyle = "red";
+    ctx2.fillStyle = "red";
+    ctx2.lineWidth = 5;
+    ctx2.lineCap = 'round';
+    ctx2.lineTo(positionX1, positionY1);
+    ctx2.stroke();
+    ctx2.beginPath();
+    ctx2.moveTo(positionX1, positionY1);
     // console.log('Y = '+e.clientY+' X = '+e.clientX);
 }
 function draw1() {
@@ -319,7 +322,7 @@ function writeText() {
   ctx.font = "30px Arial";
   ctx.fillText(`${pitch}`, centerX, centerY);
 }
-setInterval(draw,pointer, writeText, 100);
+setInterval(draw, pointer, writeText, 100);
 
 window.addEventListener('resize', function () {
     canvas.height = window.innerHeight;
