@@ -263,7 +263,6 @@ function pointer() {
     positionX1 = setPositionX1(positionX1);
     positionY1 = setPositionY1(positionY1);
     ctx.clearRect(0, 0, width, height);
-
     ctx.strokeStyle = "black";
     ctx.fillStyle = "black";
     ctx.lineWidth = 15;
