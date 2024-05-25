@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draw</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div style="display: flex; flex-direction: row; align-items: center;">
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <h2>Player1 Pitch: </h2>
+      <input type="text" id="pitch1" name="pitch1"></input>
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <h2>Player1 Roll: </h2>
+      <input type="text" id="roll1" name="roll1"></input>
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <h2>Player1 X: </h2>
+      <input type="text" id="positionX1" name="positionX1"></input>
+    </div>
+    <div style="display: flex; flex-direction: row; align-items: center;">
+      <h2>Player1 Y: </h2>
+      <input type="text" id="positionY1" name="positionY1"></input>
+    </div>
+
+  </div>
+  <div id="container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
