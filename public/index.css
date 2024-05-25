@@ -1,0 +1,17 @@
+canvas {
+  background-color: white;
+  position: relative;
+  border: 1px solid black;
+}
+body {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
