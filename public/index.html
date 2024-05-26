@@ -9,28 +9,49 @@
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <div style="display: flex; flex-direction: row; align-items: center;">
-    <div style="display: flex; flex-direction: row; align-items: center;">
-      <h2>Player1 Pitch: </h2>
-      <input type="text" id="pitch1" name="pitch1"></input>
+  <div style="display: flex; flex-direction: row; align-items: center; gap: 12px;">
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; border: 1px black solid; margin: 1px; padding: 1px; border-radius: 20px;">
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>Pitch: </p>
+        <input type="text" id="pitch1" name="pitch1"></input>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>Roll: </p>
+        <input type="text" id="roll1" name="roll1"></input>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>X: </p>
+        <input type="text" id="positionX1" name="positionX1"></input>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>Y: </p>
+        <input type="text" id="positionY1" name="positionY1"></input>
+      </div>
     </div>
-    <div style="display: flex; flex-direction: row; align-items: center;">
-      <h2>Player1 Roll: </h2>
-      <input type="text" id="roll1" name="roll1"></input>
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; border: 1px black solid; margin: 1px; padding: 1px; border-radius: 20px;">
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>Pitch: </p>
+        <input type="text" id="pitch2" name="pitcp"></input>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>Roll: </p>
+        <input type="text" id="roll2" name="roll2"></input>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>X: </p>
+        <input type="text" id="positionX2" name="positionX2"></input>
+      </div>
+      <div style="display: flex; flex-direction: row; align-items: center;gap:2px;">
+        <p>Y: </p>
+        <input type="text" id="positionY2" name="positionY2"></input>
+      </div>    
     </div>
-    <div style="display: flex; flex-direction: row; align-items: center;">
-      <h2>Player1 X: </h2>
-      <input type="text" id="positionX1" name="positionX1"></input>
-    </div>
-    <div style="display: flex; flex-direction: row; align-items: center;">
-      <h2>Player1 Y: </h2>
-      <input type="text" id="positionY1" name="positionY1"></input>
-    </div>
-
   </div>
-  <div id="container">
+    <div id="container">
     <canvas id="canvas"></canvas>
     <canvas id="canvas2"></canvas>
+    <canvas id="canvas3"></canvas>
+    <canvas id="canvas4"></canvas>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>

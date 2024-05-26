@@ -7,11 +7,20 @@
   position: absolute;
   border: 1px solid black;
 }
+#canvas3 {
+  position: absolute;
+  border: 1px solid black;
+}
+#canvas4 {
+  position: absolute;
+  border: 1px solid black;
+}
 body {
   background-color: white;
   display: flex;
   flex-direction: column;
   margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 #container {
   display: flex;

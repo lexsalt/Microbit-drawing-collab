@@ -33,6 +33,18 @@ basic.forever(function () {
     basic.pause(100)
 })
 
+## On the microbit Emitter 2:
+input.onButtonPressed(Button.A, function () {
+    radio.sendValue("a", 0)
+})
+radio.setGroup(99)
+basic.forever(function () {
+    radio.sendValue("q", input.rotation(Rotation.Pitch))
+    basic.pause(100)
+    radio.sendValue("s", input.rotation(Rotation.Roll))
+    basic.pause(100)
+})
+
 
 # On the computer
 
