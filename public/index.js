@@ -33,6 +33,7 @@ let a1 = false;
 // let ab = false;
 const sampleSize = 10;
 const centerX = width / 2;
+const startX = centerX / 2;
 const centerY = height / 2;
 // const radius = 10;
 // const lineWidth = 5;
@@ -42,9 +43,9 @@ const centerY = height / 2;
 // const circleFillColor = "white";
 // const circleRadius = 10;
 // const circleLineWidth = 2;
-let positionX1 = centerX;
+let positionX1 = startX;
 let positionY1 = centerY;
-console.log("Hello Worldaaaaa");
+console.log("Hello World!");
 const socket = io();
 
 function processData(data) {
@@ -67,7 +68,7 @@ function processData(data) {
         } else if (checkNum(num)) {
           arrayPitchPushValues(num, pitchArray, sampleSize);
           pitch1 = mostFrequent(pitchArray, pitchArray.length);
-          console.log(`pitch: ${pitch}`);
+          console.log(`pitch: ${pitch1}`);
         }
       } else {
         console.log("Not a valid Pitch");
@@ -88,7 +89,7 @@ function processData(data) {
         } else if (checkNum(num)) {
           arrayRollPushValues(num, rollArray, sampleSize);
           roll1 = mostFrequent(rollArray, rollArray.length);
-          console.log(`roll: ${roll}`);
+          console.log(`roll: ${roll1}`);
         }
       } else {
         console.log("Not a valid Roll");
@@ -231,14 +232,14 @@ var painting = a1; //draw variable
 
 function startPosition() {
     painting = true;
-    draw();
+    draw1();
 }
 function finishedPosition() {
     painting = false;
     ctx.beginPath();
 }
 
-function draw() {
+function draw1() {
     // if (!painting) return;
     document.getElementById("pitch1").value = pitch1;
     document.getElementById("roll1").value = roll1;
@@ -249,7 +250,7 @@ function draw() {
 
     ctx.strokeStyle = "black";
     ctx.fillStyle = "black";
-    ctx.lineWidth = 15;
+    ctx.lineWidth = 10;
     ctx.lineCap = 'round';
 
     ctx.lineTo(positionX1, positionY1);
@@ -258,6 +259,7 @@ function draw() {
     ctx.moveTo(positionX1, positionY1);
     // console.log('Y = '+e.clientY+' X = '+e.clientX);
 }
+
 function pointer() {
     // if (!painting) return;
     document.getElementById("pitch1").value = pitch1;
@@ -267,17 +269,24 @@ function pointer() {
     positionX1 = setPositionX1(positionX1);
     positionY1 = setPositionY1(positionY1);
     ctx2.clearRect(0, 0, width, height);
-    ctx2.strokeStyle = "red";
-    ctx2.fillStyle = "red";
-    ctx2.lineWidth = 5;
-    ctx2.lineCap = 'round';
-    ctx2.lineTo(positionX1, positionY1);
-    ctx2.stroke();
     ctx2.beginPath();
     ctx2.moveTo(positionX1, positionY1);
+    ctx2.strokeStyle = "red";
+    ctx2.fillStyle = "red";
+    ctx2.lineWidth = 8;
+    ctx2.lineCap = 'round';
+    ctx2.lineTo(positionX1, positionY1);
+    ctx2.fillStyle = "black";
+    ctx2.strokeStyle = "white";
+    ctx.fontColor = "black";
+    ctx2.font = "30px Arial";
+    ctx2.strokeText("Player 1", positionX1+10, positionY1-20);
+    ctx2.fillText("Player 1", positionX1+10, positionY1-20);
+    ctx2.fill();
+    ctx2.stroke();
     // console.log('Y = '+e.clientY+' X = '+e.clientX);
 }
-function draw1() {
+function draw3() {
   document.getElementById("pitch1").value = pitch1;
   document.getElementById("roll1").value = roll1;
   document.getElementById("positionX1").value = positionX1.toFixed(2);
@@ -317,12 +326,13 @@ function setPositionY1(y) {
   }
   return y;
 }
-function writeText() {
-  beginPath();
-  ctx.font = "30px Arial";
-  ctx.fillText(`${pitch}`, centerX, centerY);
+function execute() {
+  pointer();
+  draw1();
 }
-setInterval(draw, pointer, writeText, 100);
+setInterval(
+  execute,
+  10);
 
 window.addEventListener('resize', function () {
     canvas.height = window.innerHeight;

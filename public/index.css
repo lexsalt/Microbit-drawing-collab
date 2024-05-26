@@ -1,6 +1,6 @@
 #canvas {
-  background-color: white;
-  position: relative;
+  /* background-color: white; */
+  position: absolute;
   border: 1px solid black;
 }
 #canvas2 {
@@ -8,7 +8,7 @@
   border: 1px solid black;
 }
 body {
-  background-color: pink;
+  background-color: white;
   display: flex;
   flex-direction: column;
   margin: 0;
