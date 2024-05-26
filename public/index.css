@@ -20,11 +20,49 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#readings {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 12px;
+  margin: 1px;
+  padding: 1px;
+  height: 4vh;
+  width: 100vw;
 }
 #container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  height: 98vh;
+}
+#itemContainer {
+  background-color: tomato;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  border: 1px black solid;
+  margin: 1px;
+  padding: 5px;
+  border-radius: 20px;
+}
+#item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+p {
+  font-weight: 600;
+  margin: 0;
+}
+input {
+  border-radius: 12px;
+  margin: 0;
+  padding: 2px;
 }

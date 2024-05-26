@@ -47,14 +47,6 @@ const centerX = width / 2;
 const start1X = centerX / 2;
 const start2X = centerX+(centerX / 2);
 const centerY = height / 2;
-// const radius = 10;
-// const lineWidth = 5;
-// const lineLength = 50;
-// const lineColor = "black";
-// const circleColor = "black";
-// const circleFillColor = "white";
-// const circleRadius = 10;
-// const circleLineWidth = 2;
 let positionX1 = start1X;
 let positionY1 = centerY;
 let positionX2 = start2X;
@@ -377,12 +369,13 @@ function draw2() {
 function pointer1() {
     ctx2.clearRect(0, 0, width, height);
     ctx2.beginPath();
-    ctx2.lineColor = "black";
+    ctx2.lineColor = "red";
+    ctx2.strokeStyle = "red";
     ctx2.moveTo(positionX1+5, positionY1-10);
     ctx2.lineTo(positionX1+20,positionY1-15);
     ctx2.lineTo(positionX1+5, positionY1-25);
     ctx2.lineTo(positionX1+5, positionY1-10);
-    ctx2.fillStyle = "white";
+    ctx2.fillStyle = "red";
     ctx2.fill();
     ctx2.stroke();
 }
@@ -390,20 +383,20 @@ function pointer2() {
     // if (!painting) return;
     ctx4.clearRect(0, 0, width, height);
     ctx4.beginPath();
-    ctx4.lineColor = "black";
+    ctx4.lineColor = "gray";
     ctx4.moveTo(positionX2+5, positionY2-10);
     ctx4.lineTo(positionX2+20, positionY2-15);
     ctx4.lineTo(positionX2+5, positionY2-25);
     ctx4.lineTo(positionX2+5, positionY2-10);
-    ctx4.fillStyle = "white";
+    ctx4.fillStyle = "red";
     ctx4.fill();
     ctx4.stroke();
 }
 function text1 () {
     ctx2.clearRect(0, 0, width, height);
     ctx2.lineWidth = 1;
-    ctx2.strokeStyle = "gray";
-    ctx2.font = "bolder 18px Roboto";
+    ctx2.strokeStyle = "white";
+    ctx2.font = "bolder 12px Verdana";
     ctx2.fillStyle = "black";
     ctx2.strokeText("Player 1", positionX1+15, positionY1-25);
     ctx2.fillText("Player 1", positionX1+15, positionY1-25);
@@ -413,35 +406,14 @@ function text1 () {
 function text2 () {
     ctx4.clearRect(0, 0, width, height);
     ctx4.lineWidth = 1;
-    ctx4.strokeStyle = "gray";
-    ctx4.font = "bolder 18px Roboto";
+    ctx4.strokeStyle = "white";
+    ctx4.font = "bolder 12px Verdana";
     ctx4.fillStyle = "black";
     ctx4.strokeText("Player 2", positionX2+15, positionY2-25);
     ctx4.fillText("Player 2", positionX2+15, positionY2-25);
     ctx4.fill();
     ctx4.stroke();
 } 
-
-function draw3() {
-  document.getElementById("pitch1").value = pitch1;
-  document.getElementById("roll1").value = roll1;
-  document.getElementById("positionX1").value = positionX1.toFixed(2);
-  document.getElementById("positionY1").value = positionY1.toFixed(2);
-  positionX1 = setPositionX1(positionX1);
-  positionY1 = setPositionY1(positionY1);
-  // console.log("draw")
-
-  // ctx.clearRect(0, 0, width, height);
-  ctx.beginPath();
-  ctx.arc(positionX1, positionY1, circleRadius, 0, 2 * Math.PI);
-  ctx.lineWidth = circleLineWidth;
-  // ctx.strokeStyle = circleColor;
-  ctx.strokeStyle = getRandomColor();
-  ctx.stroke();
-  // ctx.fillStyle = circleFillColor;
-  ctx.fillStyle = getRandomColor();
-  ctx.fill();
-}
 
 function setPositionX1(x) {
   if (x > width) {
