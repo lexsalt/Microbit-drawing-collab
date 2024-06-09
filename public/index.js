@@ -267,8 +267,16 @@ function setPositionY1(y) {
 
 function execute() {
   pointer1();
-  draw1();
   text1();
+  if (a1) {
+    draw1();
+  }
+  // pointer1();
+  // draw1();
+  // text1();
+  // pointer2();
+  // draw2();
+  // text2();
 }
 setInterval(execute, 10);
 
