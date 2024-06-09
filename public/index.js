@@ -208,7 +208,7 @@ function draw1() {
 
   ctx.strokeStyle = "black";
   ctx.fillStyle = "black";
-  ctx.lineWidth = 6;
+  ctx.lineWidth = 10;
   ctx.lineCap = "round";
   ctx.beginPath();
   ctx.lineTo(positionX1, positionY1);
