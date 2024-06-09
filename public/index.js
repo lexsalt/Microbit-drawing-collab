@@ -106,7 +106,7 @@ function processData(data) {
       setTimeout(() => {
         // console.log("Delayed for 0.5 second.");
         a1 = false;
-      }, "500");
+      }, 500);
     }
   }
 }
@@ -210,10 +210,10 @@ function draw1() {
   ctx.fillStyle = "black";
   ctx.lineWidth = 6;
   ctx.lineCap = "round";
-  ctx.lineTo(positionX1, positionY1);
-  ctx.stroke();
   ctx.beginPath();
+  ctx.lineTo(positionX1, positionY1);
   ctx.moveTo(positionX1, positionY1);
+  ctx.stroke();
 }
 
 function pointer1() {
