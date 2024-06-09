@@ -205,8 +205,7 @@ function draw1() {
   // document.getElementById("roll1").value = roll1;
   // document.getElementById("positionX1").value = positionX1.toFixed(2);
   // document.getElementById("positionY1").value = positionY1.toFixed(2);
-  positionX1 = setPositionX1(positionX1);
-  positionY1 = setPositionY1(positionY1);
+
   ctx.strokeStyle = "black";
   ctx.fillStyle = "black";
   ctx.lineWidth = 6;
@@ -218,6 +217,8 @@ function draw1() {
 }
 
 function pointer1() {
+  positionX1 = setPositionX1(positionX1);
+  positionY1 = setPositionY1(positionY1);
   ctx2.clearRect(0, 0, width, height);
   ctx2.beginPath();
   ctx2.lineColor = "red";
