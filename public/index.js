@@ -239,7 +239,13 @@ function processData3(data) {
       } else {
         console.log("Not a valid Roll");
       }
-    }
+    } else if (data.indexOf("a") === 0) {
+        a1 = true;
+        setTimeout(() => {
+          // console.log("Delayed for 0.5 second.");
+          a1 = false;
+        }, "500");
+      }
   }
 }
 
@@ -322,14 +328,14 @@ function getRandomColor() {
 // var painting = undefined; //draw variable
 var painting = a1; //draw variable
 
-function startPosition() {
-    painting = true;
-    draw1();
-}
-function finishedPosition() {
-    painting = false;
-    ctx.beginPath();
-}
+// function startPosition() {
+//     painting = true;
+//     draw1();
+// }
+// function finishedPosition() {
+//     painting = false;
+//     ctx.beginPath();
+// }
 
 function draw1() {
     // if (!painting) return;
@@ -339,13 +345,13 @@ function draw1() {
     document.getElementById("positionY1").value = positionY1.toFixed(2);
     positionX1 = setPositionX1(positionX1);
     positionY1 = setPositionY1(positionY1);
+    ctx.beginPath();
     ctx.strokeStyle = "black";
     ctx.fillStyle = "black";
     ctx.lineWidth = 6;
     ctx.lineCap = 'round';
     ctx.lineTo(positionX1, positionY1);
     ctx.stroke();
-    ctx.beginPath();
     ctx.moveTo(positionX1, positionY1);
 }
 function draw2() {
@@ -367,6 +373,12 @@ function draw2() {
 }
 
 function pointer1() {
+  document.getElementById("pitch1").value = pitch1;
+  document.getElementById("roll1").value = roll1;
+  document.getElementById("positionX1").value = positionX1.toFixed(2);
+  document.getElementById("positionY1").value = positionY1.toFixed(2);
+  positionX1 = setPositionX1(positionX1);
+  positionY1 = setPositionY1(positionY1);
     ctx2.clearRect(0, 0, width, height);
     ctx2.beginPath();
     ctx2.lineColor = "red";
@@ -393,9 +405,11 @@ function pointer2() {
     ctx4.stroke();
 }
 function text1 () {
-    ctx2.clearRect(0, 0, width, height);
+    // ctx2.clearRect(0, 0, width, height);
+    ctx2.beginPath();
     ctx2.lineWidth = 1;
-    ctx2.strokeStyle = "white";
+    ctx2.strokeStyle = "black";
+    ctx2.lineColor = "black";
     ctx2.font = "bolder 12px Verdana";
     ctx2.fillStyle = "black";
     ctx2.strokeText("Player 1", positionX1+15, positionY1-25);
@@ -458,11 +472,16 @@ function setPositionY2(y) {
 
 function execute() {
   pointer1();
-  draw1();
   text1();
-  pointer2();
-  draw2();
-  text2();
+  if (a1) {
+    draw1();
+  }
+  // pointer1();
+  // draw1();
+  // text1();
+  // pointer2();
+  // draw2();
+  // text2();
 }
 setInterval(
   execute,

@@ -39,6 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 98vh;
+  margin: 0.5rem;
 }
 #itemContainer {
   background-color: tomato;
