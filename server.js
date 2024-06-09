@@ -28,10 +28,11 @@ app.use(express.static(__dirname + "/public"));
 // let port = new SerialPort('/dev/tty.usbmodem14202', {
 // WINDOWS PORT FOR MICROBIT
 // to check the COMXX number look at device manager
-let port = new SerialPort("COM3", {
+let port = new SerialPort("COM8", {
   // let port = new SerialPort('/dev/tty.usbmodem14202', {
   baudRate: 115200,
-  autoOpen: false,
+  // baudRate: 1200,
+  // autoOpen: false,
 });
 
 // The Serial port parser

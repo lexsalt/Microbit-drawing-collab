@@ -51,9 +51,10 @@ function processData(data) {
         if (!checkNum(num)) {
           // console.log(num);
         } else if (checkNum(num)) {
-          arrayPitchPushValues(num, pitch1Array, sampleSize);
-          pitch1 = mostFrequent(pitch1Array, pitch1Array.length);
-          console.log(`pitch: ${pitch1}`);
+          // arrayPitchPushValues(num, pitch1Array, sampleSize);
+          // pitch1 = mostFrequent(pitch1Array, pitch1Array.length);
+          pitch1 = num;
+          // console.log(`pitch: ${pitch1}`);
         }
       } else {
         console.log("Not a valid Pitch");
@@ -72,9 +73,10 @@ function processData(data) {
         if (!checkNum(num)) {
           // console.log(num);
         } else if (checkNum(num)) {
-          arrayRollPushValues(num, roll1Array, sampleSize);
-          roll1 = mostFrequent(roll1Array, roll1Array.length);
-          console.log(`roll: ${roll1}`);
+          // arrayRollPushValues(num, roll1Array, sampleSize);
+          // roll1 = mostFrequent(roll1Array, roll1Array.length);
+          roll1 = num;
+          // console.log(`roll: ${roll1}`);
         }
       } else {
         console.log("Not a valid Roll");
@@ -91,9 +93,10 @@ function processData(data) {
         if (!checkNum(num)) {
           // console.log(num);
         } else if (checkNum(num)) {
-          arrayYawPushValues(num, yaw1Array, sampleSize);
-          roll1 = mostFrequent(yaw1Array, yaw1Array.length);
-          console.log(`roll: ${roll1}`);
+          // arrayYawPushValues(num, yaw1Array, sampleSize);
+          // yaw1 = mostFrequent(yaw1Array, yaw1Array.length);
+          yaw1 = num;
+          // console.log(`yaw: ${yaw1}`);
         }
       } else {
         console.log("Not a valid Roll");
@@ -198,10 +201,10 @@ function finishedPosition() {
 
 function draw1() {
   // if (!painting) return;
-  document.getElementById("pitch1").value = pitch1;
-  document.getElementById("roll1").value = roll1;
-  document.getElementById("positionX1").value = positionX1.toFixed(2);
-  document.getElementById("positionY1").value = positionY1.toFixed(2);
+  // document.getElementById("pitch1").value = pitch1;
+  // document.getElementById("roll1").value = roll1;
+  // document.getElementById("positionX1").value = positionX1.toFixed(2);
+  // document.getElementById("positionY1").value = positionY1.toFixed(2);
   positionX1 = setPositionX1(positionX1);
   positionY1 = setPositionY1(positionY1);
   ctx.strokeStyle = "black";
